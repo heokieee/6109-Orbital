@@ -32,4 +32,3 @@ class ReminderForm(forms.ModelForm):
     class Meta:
         model = Reminder
         fields = ['title', 'description', 'date', 'time', 'priority']
-

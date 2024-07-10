@@ -14,8 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         localStorage.setItem('username', username);
         localStorage.setItem('password', password);
 
-        // Optionally, you can redirect or perform other actions here
-        // Example: redirect to a thank you page
-        window.location.href = '/thank-you/';  // Replace with your actual URL
+        // Redirect to home page
+        window.location.href = '/accounts/home/';
     });
 });
