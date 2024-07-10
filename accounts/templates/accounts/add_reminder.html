@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Reminder</title>
+    <link rel="stylesheet" href="{% static 'css/add_reminder.css' %}">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <span><strong>StuDone</strong></span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li class="dropdown">
+                        <a href="{% url 'dashboard' %}">Reminders</a>
+                        <div class="dropdown-content">
+                            <a href="{% url 'add_reminder' %}">Add Reminder</a>
+                        </div>
+                    </li>
+                    <li><a href="#" onclick="document.getElementById('logout-form').submit();">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="add-reminder-form">
+            <h1>Add Reminder</h1>
+            <form id="add-reminder-form" method="post" action="{% url 'add_reminder' %}">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit">Add Reminder</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2024 StuDone. All rights reserved.</p>
+    </footer>
+
+    <!-- Logout form -->
+    <form id="logout-form" method="POST" action="{% url 'logout' %}" style="display: none;">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+
+    <script src="{% static 'js/add_reminder.js' %}"></script>
+</body>
+</html>

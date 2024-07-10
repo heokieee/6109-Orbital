@@ -1,0 +1,157 @@
+/* Reset and global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #76bbec;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #fff;
+}
+
+/* Header Styling */
+header {
+  background-color: #007bff; /* Adjust to your header color */
+  color: white;
+  padding: 20px 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li .dropdown-content a:hover {
+  background-color: #0056b3; /* Adjust to your hover color */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #007bff; /* Adjust to your dropdown background color */
+  min-width: 160px;
+  z-index: 1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-content a {
+  padding: 10px;
+  display: block;
+  color: white;
+}
+
+nav ul li:hover > .dropdown-content {
+  display: block;
+}
+
+/* Main Container Styling */
+.container {
+  background-color: #1b1b1b;
+  width: min(90%, 500px);
+  margin-top: 80px; /* Adjusted to prevent content being hidden behind the fixed header */
+  padding: 4em 2em;
+  border-radius: 0.5em;
+}
+
+.section-container {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+}
+
+.btn {
+  padding: 1em 2em;
+  border-radius: 0.5em;
+  background-color: #3e3f43;
+  color: #a9a7a7;
+  cursor: pointer;
+}
+
+.btn-focus {
+  background-color: #4541b9;
+  color: #ffffff;
+}
+
+.time-btn-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2em;
+}
+
+#time {
+  text-align: center;
+  color: #ffffff;
+  font-size: 5em;
+  font-weight: 600;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+}
+
+#btn-start,
+#btn-pause {
+  padding: 1em 2em;
+  border-radius: 0.5em;
+  cursor: pointer;
+  background-color: #ffffff;
+}
+
+#btn-reset {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 2em;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}

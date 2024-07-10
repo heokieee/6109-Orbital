@@ -1,0 +1,145 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f2f2f2;
+}
+
+header {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 40px;
+  margin-right: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+nav ul li a:hover, nav ul li .dropdown-content a:hover {
+  background-color: #0056b3;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #007BFF;
+  min-width: 160px;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  padding: 10px;
+  display: block;
+}
+
+nav ul li:hover > .dropdown-content {
+  display: block;
+}
+
+nav ul li:active > .dropdown-content {
+  opacity: 0.8;
+}
+
+main {
+  max-width: 960px;
+  margin: 20px auto;
+  padding: 0 20px;
+}
+
+.add-reminder-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.add-reminder-form h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.add-reminder-form form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+.add-reminder-form label {
+  font-weight: bold;
+}
+
+.add-reminder-form input[type="text"],
+.add-reminder-form input[type="date"],
+.add-reminder-form input[type="time"],
+.add-reminder-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.add-reminder-form select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.add-reminder-form button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-reminder-form button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+footer {
+  background-color: #007bff;
+  color: white;
+  text-align: center;
+  padding: 5px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  font-size: 12px;
+}
