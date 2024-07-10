@@ -7,17 +7,18 @@ from .models import Reminder
 
 class RegistrationForm(UserCreationForm):
     email = forms.EmailField(required=True)
+    username = forms.CharField(max_length=150, required=True)  # Define username field separately
     first_name = forms.CharField(max_length=100, required=True)
     last_name = forms.CharField(max_length=100, required=True)
 
     class Meta:
         model = User
-        fields = ('first_name', 'last_name', 'email', 'password1','password2')
-    
+        fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2')
+
     def save(self, commit=True):
-        user = super(RegistrationForm, self).save(commit=False)
+        user = super().save(commit=False)
         user.email = self.cleaned_data['email']
-        user.username = self.cleaned_data['email']
+        user.username = self.cleaned_data['username']  # Assign username from form input
         user.first_name = self.cleaned_data['first_name']
         user.last_name = self.cleaned_data['last_name']
 
