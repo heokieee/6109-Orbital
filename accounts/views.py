@@ -23,6 +23,7 @@ from django.http import JsonResponse
 from .models import Resource
 from .models import Event
 from .models import Task
+from django.urls import reverse_lazy
 from .forms import ReminderForm
 
 def get_reminders(request):
@@ -258,6 +259,9 @@ class HomeView(TemplateView):
         context['welcome_message'] = 'Welcome to the home page!'
         return context
     
+def create_user(username, password):
+    user = User.objects.create_user(username=username, password=password)
+    user.save()
 
 class RegistrationView(FormView):
     template_name = 'accounts/registration.html'
@@ -265,16 +269,23 @@ class RegistrationView(FormView):
     success_url = '/accounts/home/'  # Redirect to the home page after successful registration
 
     def form_valid(self, form):
-    # Create a new user using the form data
+        # Create a new user using the form data
         username = form.cleaned_data['username']
         password = form.cleaned_data['password1']
         create_user(username, password)
 
-    # Log in the user
+        # Log in the user
         user = User.objects.get(username=username)  # Fetch the newly created user
         login(self.request, user)
 
+        print("Form is valid and user is logged in.")
+
         return super().form_valid(form)
+
+    def form_invalid(self, form):
+        # Print form errors for debugging
+        print("Form is invalid. Errors:", form.errors)
+        return super().form_invalid(form)
     
 @login_required
 def videocall(request):
