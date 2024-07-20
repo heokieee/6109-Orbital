@@ -28,6 +28,7 @@ urlpatterns = [
     path('meeting/',views.videocall, name='meeting'),
     path('join/',views.join_room, name='join_room'),
     path('pomodoro/', PomodoroView.as_view(), name='pomodoro'),
+    path('notes/', views.notes, name='notes'),
 ]
 
 

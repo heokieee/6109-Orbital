@@ -303,3 +303,6 @@ class PomodoroView(View):
 
     def get(self, request, *args, **kwargs):
         return render(request, self.template_name)
+    
+def notes(request):
+    return render(request, 'accounts/notes.html')
