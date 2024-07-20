@@ -24,6 +24,35 @@ body {
   color: var(--text-clr);
 }
 
+/* Header Styling */
+header {
+  background-color: var(--header-footer-bg);
+  color: var(--header-footer-text);
+  padding: 10px 0;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+}
+
 nav ul {
   list-style: none;
   display: flex;
@@ -43,13 +72,13 @@ nav ul li a {
 
 nav ul li a:hover,
 nav ul li .dropdown-content a:hover {
-  background-color: #0056b3; /* Adjust to your hover color */
+  background-color: #0056b3;
 }
 
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: var(--header-footer-bg); /* Updated to match the header/footer background color */
+  background-color: var(--header-footer-bg);
   min-width: 160px;
   z-index: 1;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -261,9 +290,13 @@ nav ul li:hover > .dropdown-content {
 }
 
 .popup header i {
-  color: #8b8989;
+  color: #050505; /* Icon color */
   cursor: pointer;
   font-size: 23px;
+}
+
+.popup header i:hover {
+  color: var(--secondary-clr);
 }
 
 .popup .content {
@@ -354,63 +387,4 @@ form button:hover {
   .bottom-content .settings i {
     font-size: 17px;
   }
-}
-
-/* Header Styling */
-header {
-  background-color: var(--header-footer-bg);
-  color: var(--header-footer-text);
-  padding: 20px 0;
-  width: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  display: flex;
-  justify-content: center;
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 90%;
-  max-width: 1200px;
-}
-
-.navbar .logo {
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.navbar ul {
-  display: flex;
-  list-style: none;
-}
-
-.navbar ul li {
-  margin-left: 20px;
-}
-
-.navbar ul li a {
-  color: var(--header-footer-text);
-  text-decoration: none;
-  padding: 8px 15px;
-  border-radius: 4px;
-  transition: background-color 0.3s;
-}
-
-.navbar ul li a:hover {
-  background-color: #0056b3; /* Adjust hover color as needed */
-}
-
-/* Footer Styling */
-footer {
-  background-color: var(--header-footer-bg);
-  color: var(--header-footer-text);
-  padding: 10px 0;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
 }
